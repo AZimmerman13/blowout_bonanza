@@ -1,5 +1,8 @@
 # Blowout Bonanza?
 By Austin Zimmerman
+<p align="center">
+       <img src="images/scoreboard.png" width="600"/>
+
 ```
 The information used here was obtained free of
 charge from and is copyrighted by Retrosheet.  Interested
@@ -53,3 +56,7 @@ No, I am not just going to rely on the eye-test to tell me that this phenomenon 
 
 ## How did I do this?
 oh wouldn't you like to know, stay tuned for some #process
+
+
+Image Credits:
+https://www.gannett-cdn.com/presto/2019/07/26/PNJM/b6a345c6-cc86-41b7-b62d-90b81f910566-AP_19207093293088.jpg
