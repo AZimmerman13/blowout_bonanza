@@ -1,5 +1,6 @@
 # Blowout Bonanza?
 By Austin Zimmerman
+
 <p align="center">
        <img src="images/scoreboard.png" width="600"/>
 
