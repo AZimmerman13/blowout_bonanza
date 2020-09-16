@@ -54,6 +54,9 @@ if __name__ == '__main__':
     cleaned = clean_games(games)
     cleaned['MOV'] = np.abs(cleaned.visitor_score - cleaned.home_score)
     plt.hist(cleaned.MOV, bins=20)
+
+    # group = cleaned.groupby("MOV").count()
+    # group['percent'] = group.home_score / 24297
     
     plt.title('2020 Margin of Victory')
     plt.savefig('2020.png')
