@@ -63,7 +63,7 @@ Below I have re-visualized the MOV for each sample with a key change: rather tha
 <tr><th> Pre-2020 MOV (Home wins are negative) </th><th>  2020 MOV </th></tr>
 <tr><td>
 
-<img src="images/pre20normal.png" width="600" />
+<img src="images/pre20_normal.png" width="600" />
 
 </td><td>
 
