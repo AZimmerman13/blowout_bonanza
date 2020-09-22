@@ -75,7 +75,7 @@ Below I have re-visualized the MOV for each sample with a key change: rather tha
 
 I think it is interesting to note the fairly pronounced "home-field advantage" that each histogram shows in 1-run games.  I suspect that this is the result of the fact that a game ends automatically when the home team takes a lead of 1 run in the 9th inning or later, even if they could have scored more (unless, of course, that first run is one of several to come in as the result of a home run).
 
-*Thanks to my friend Sam Silver for some consultation in this section
+*Thanks to my friend Sam Silver for some consultation in this section*
 
 ## How did I do this?
 
