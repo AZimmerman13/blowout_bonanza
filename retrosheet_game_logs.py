@@ -21,12 +21,15 @@ if __name__ == '__main__':
 
 
     df['MOV'] = np.abs(df.visitor_score - df.home_score)
+    df['mov'] = df.visitor_score - df.home_score
+    df.to_csv('pre2020.csv')
     plt.hist(df.MOV, bins=20)
     
     plt.title('Pre-2020 Margin of Victory')
     plt.savefig('pre2020.png')
     plt.tight_layout()
-    plt.show()
+    plt.close()
+
     
     print(f'Pre-2020 Mean:{np.mean(df.MOV)}')
     print(f'Pre-2020 Std: {np.std(df.MOV)}')
@@ -35,6 +38,26 @@ if __name__ == '__main__':
 
     group = df.groupby("MOV").count()
     group['percent'] = group.home_score / 24297
+
+    strapping = False
+    if strapping:
+        sample_means = []
+        for i in 10000:
+            bootstrap = np.random.choice(df.MOV, size=len(df.MOV), replace=True)
+            sample_means.append(np.mean(bootstrap))
+        
+        sample_means = pd.Series(sample_means)
+    else:
+        sample_means = pd.read_csv('pre2020_sample_means.csv')
+
+    plt.hist(df.mov)
+    # plt.axvline(3.62, color='red')
+    plt.tight_layout()
+    plt.savefig('images/normal.png')
+    plt.show()
+
+    
+    
 '''
          visitor_score  home_score   percent
 MOV

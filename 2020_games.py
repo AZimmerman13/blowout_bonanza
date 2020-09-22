@@ -39,7 +39,7 @@ def clean_games(games):
 
 
 if __name__ == '__main__':
-    
+    print('Getting updated scores...')
     client = MongoClient('localhost', 27017)
     db = client['baseball_reference']
     table = db['gl_2020']
@@ -51,21 +51,36 @@ if __name__ == '__main__':
     '''
     games = [i for i in soup.find_all(class_="game")]
 
+    print("Cleaning up HTML...")
     cleaned = clean_games(games)
     cleaned['MOV'] = np.abs(cleaned.visitor_score - cleaned.home_score)
     plt.hist(cleaned.MOV, bins=20)
+    cleaned.to_csv('2020_games.csv')
 
-    # group = cleaned.groupby("MOV").count()
-    # group['percent'] = group.home_score / 24297
+    group = cleaned.groupby("MOV").count()
+    group['percent'] = group.home_score / 719
+
     
     plt.title('2020 Margin of Victory')
     plt.savefig('2020.png')
     plt.tight_layout()
-    plt.show()
+    plt.close()
 
     test = np.random.poisson(lam=1.0, size = 900)
     plt.hist(test, bins=5)
     plt.close()
+
+    print("loading pre-2020 sample means...")
+    sample_means = pd.read_csv('pre2020_sample_means.csv')
+    avg2020 = np.mean(cleaned.MOV)
+
+    print("Plotting...")
+    fig, ax = plt.subplots()
+    ax.hist(sample_means)
+    ax.vline(avg2020, label='2020 Average MOV')
+    ax.set_title('Title')
+    plt.tight_layout()
+    plt.show()
 
     print(f'2020 Mean:{np.mean(cleaned.MOV)}')
     print(f'2020 Std: {np.std(cleaned.MOV)}')
