@@ -61,21 +61,12 @@ In this case, as alluded to above, my null hypothesis is that there is no statis
 <tr><th> </th><th> </th></tr>
 <tr><td>
 
-| Generation Source    | grams CO<sub>2</sub>e |
-|----------------------|-----------------------|
-| Coal                 | 820        
-| Natural Gas          | 490        
-| Biomass              | 230        
-| Solar                | 48   
-| Geothermal           | 38      
-| Hydro                | 24         
-| Nuclear              | 12         
-| Wind                 | 11.5       
+<img src="images/pre20normal.png" width="600" />
 
 </td><td>
 
 
-<img src="images/ipcc_bar.png" width="600" />
+<img src="images/20normal.png" width="600" />
 
 </td></tr> </table>
 </p>

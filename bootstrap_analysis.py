@@ -12,9 +12,8 @@ if __name__ == '__main__':
     dfpre = pd.read_csv('pre2020.csv')
     df20['mov'] = df20.visitor_score - df20.home_score
     avg20 = np.mean(df20.MOV)
-    # np.mean(df20.mov) - np.mean(dfpre.mov)
     Ztest = ztest(df20.mov, dfpre.mov, value=0, alternative='larger')
-    Ttest = ttest_ind(df20.mov, dfpre.mov)
+
     # Plotting
     plotting = False
     if plotting:
@@ -28,9 +27,16 @@ if __name__ == '__main__':
         plt.savefig('images/sample_means.png')
         plt.show()
 
-        plt.hist(df20.mov)
-        plt.axvline(np.mean(df20.mov), color='red')
-        plt.savefig('images/pre20normal.png')
-        plt.show()
+    plt.hist(df20.mov, bins=10)
+    plt.savefig('images/20normal.png')
+    plt.title('2020 MOV (Home wins are negative)')
+    plt.tight_layout()
+    plt.show()
+
+    plt.hist(dfpre.mov, bins=20)
+    plt.savefig('images/pre20normal.png')
+    plt.title('Pre-2020 MOV (Home wins are negative)')
+    plt.tight_layout()
+    plt.show()
 
     
