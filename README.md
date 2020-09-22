@@ -58,7 +58,7 @@ In this case, as alluded to above, my null hypothesis is that there is no statis
 
 <p align="center">
 <table>
-<tr><th> </th><th> </th></tr>
+<tr><th> Pre-2020 MOV (Home wins are negative) </th><th>  2020 MOV </th></tr>
 <tr><td>
 
 <img src="images/pre20normal.png" width="600" />
