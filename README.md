@@ -55,6 +55,8 @@ So, it looks like there is a marginal increase in blowout rate (which is going t
 ### Statistical Test
 In this case, as alluded to above, my null hypothesis is that there is no statistically significant difference in how bad teams are getting beat in 2020.  Due to both samples having n > 30 and a (pretty darn close to) normal distribution of MOV, I chose a two-sample Z Test.  Based on the results of this test (p-value of 0.54), I can confidently say that we fail to reject the null hypothesis.  In other words, things are definitely weird, but baseball is more or less the same.
 
+Below I have re-visualized the MOV for each sample with a key change: rather than using the absolute value as above, I have simply done `visitor_score - home_score`.  While this is less intuitive for the casual reader, it makes a lot more sense for our statistical testing!
+
 
 <p align="center">
 <table>
@@ -71,14 +73,15 @@ In this case, as alluded to above, my null hypothesis is that there is no statis
 </td></tr> </table>
 </p>
 
+I think it is interesting to note the fairly pronounced "home-field advantage" that each histogram shows in 1-run games.  I suspect that this is the result of the fact that a game ends automatically when the home team takes a lead of 1 run in the 9th inning or later, even if they could have scored more (unless, of course, that first run is one of several to come in as the result of a home run).
+
 ## How did I do this?
-oh wouldn't you like to know, stay tuned for some #process
 
 As mentioned above, the pre-2020 data was easily and publicly accessible via retrosheet in the form of csv files.  I used `pandas` to load in select columns of this data (retrosheet's game logs contain far more detail than I needed) and do a bit of manipulation to get the feature I was really after, Margin of Victory (MOV).
 
 The 2020 data was scraped from Baseball-Reference and cleaned up using Python's `Beautiful Soup` library, and then loading into `pandas` for the same featurization as the pre-2020 data.
 
-Once all the data was safely in pandas, 
+Once all the data was safely in pandas, I calculated
 
 I used `MatplotLib` for all visualizations.
 
